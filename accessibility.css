@@ -1,0 +1,111 @@
+/* Correcciones POUR: foco, contraste, lectura, controles y adaptación al zoom.
+   Se carga al final para que los estados no pierdan su estilo por la cascada. */
+:root, [data-bs-theme="light"] {
+  --muted: #526158;
+  --accent-text: #8d432f;
+  --control-border: #718174;
+}
+[data-bs-theme="dark"] {
+  --muted: #b0bfb4;
+  --accent-text: #e4a184;
+  --control-border: #879d8d;
+}
+[hidden] { display: none !important; }
+.site-header { position: static; }
+.is-enhanced .site-header { position: sticky; }
+.skip-link { z-index: 1100; max-width: calc(100% - 30px); background: var(--action); color: var(--action-text); }
+/* El foco permanece visible, incluso cuando Bootstrap define su propio :focus. */
+a:focus-visible, button:focus-visible, summary:focus-visible,
+input:focus-visible, select:focus-visible,
+.search-field .form-control:focus-visible,
+.form-check-input:focus-visible, .accordion-button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 2px var(--paper);
+  scroll-margin-top: calc(var(--nav-height, 96px) + 20px);
+}
+.skip-link:focus-visible { outline-color: var(--accent); }
+.site-header .nav-link:hover, .site-header .nav-link:focus,
+.wordmark:hover { color: var(--accent-text); }
+.site-header .nav-link.active { color: var(--ink); }
+.navbar-nav { min-width: 0; }
+.navbar-brand { max-width: 100%; white-space: normal; }
+.navbar { column-gap: 12px; }
+.site-header .nav-link { min-height: 44px; display: flex; align-items: center; }
+.btn { min-height: 44px; }
+.theme-control { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-height: 44px; padding: 4px; }
+.theme-switch .form-check-label { font-size: .875rem; }
+.theme-switch .form-check-input { width: 44px; height: 24px; }
+.theme-icon { color: var(--muted); }
+[data-bs-theme="light"] .theme-sun, [data-bs-theme="dark"] .theme-moon { color: var(--accent-text); }
+.search-field, .course-filter .form-select, .results-bar .form-select,
+.copy-color, .checklist-row .form-check-input, .theme-switch .form-check-input { border-color: var(--control-border); }
+.search-field .form-control { font-size: 1rem; min-height: 0; padding-block: .625rem; line-height: 1.5; }
+/* Misma altura exterior y tipografía para Curso y Buscar, sin limitar el crecimiento del texto. */
+.catalog-controls .search-field, .course-filter .form-select { min-height: 3rem; }
+.course-filter .form-select { font-size: 1rem; }
+.search-control { flex: 1; min-width: 230px; }
+.search-control .form-label { font-size: .875rem; margin-bottom: 6px; }
+.catalog-controls .search-field { margin-top: 0; }
+.course-filter .form-label, .sort-label { font-size: .875rem; color: var(--ink); }
+.results-bar > div { display: flex; flex-direction: column; gap: 4px; }
+.sort-label { margin-bottom: 0; }
+.results-bar .form-select, .course-filter .form-select { max-width: 100%; min-width: 0; }
+.results-bar .form-select { font-size: 1rem; min-height: 3rem; line-height: 1.5; }
+.filter-button, .reference-link, .figma-link, .project-actions .btn,
+.student, .results-bar, .catalog-help, .pending-project { font-size: .875rem; }
+.filter-button span { font-size: .875rem; opacity: 1; }
+.filter-button, .project-actions .btn { min-height: 44px; }
+.reference-link, .figma-link { min-height: 44px; align-items: center; display: inline-flex; }
+.student-row { flex-wrap: wrap; }
+.status { font-size: .875rem; white-space: normal; }
+.avatar { font-size: .875rem; }
+.cover-label { font-size: .75rem; letter-spacing: 1px; }
+.project-number { font-size: .875rem; opacity: 1; }
+.eyebrow { font-size: .75rem; }
+.course-strip, .course-strip span, .course-strip span:nth-child(2) { font-size: .75rem; }
+.catalog-help { line-height: 1.65; color: var(--muted); margin-bottom: 12px; }
+.pending-project { color: var(--muted); padding: 10px 0; }
+.section-heading > p, .course-details, .assignment-description,
+.accordion-body, .view-list li, .view-list li::before,
+.checklist-note, .checklist-status, .process-number, .process-description,
+.gallery-note, .delivery-card p, .resource-status, .style-table,
+.style-table caption, .style-list { font-size: .875rem; }
+.view-list li::before { color: var(--muted); }
+.view-list li { grid-template-columns: 30px minmax(110px, .7fr) 1.5fr; }
+.view-list span, .view-list strong { min-width: 0; overflow-wrap: anywhere; }
+.checklist-row { min-height: 44px; }
+.checklist-row .form-check-label { font-size: 1rem; }
+.checklist-row:has(input:checked) .form-check-label { text-decoration: none; }
+.undo-review { border: 1px solid var(--control-border); color: var(--ink); background: var(--surface); font-size: .875rem; }
+.copy-color { min-width: 44px; min-height: 44px; }
+.copy-feedback { font-size: 1rem; color: var(--ink); padding: 12px; border: 1px solid var(--control-border); border-radius: 4px; overflow-wrap: anywhere; }
+.swatch-card h4, .swatch-card code, .font-specimen span { font-size: .875rem; }
+.swatch-card code { overflow-wrap: anywhere; }
+.color-value { flex-wrap: wrap; }
+.style-table { min-width: 0; }
+.style-table th, .style-table td { overflow-wrap: anywhere; }
+.guide-toggle { padding: 14px; border: 1px solid var(--control-border); border-radius: 4px; font-size: 1rem; min-height: 44px; cursor: pointer; color: var(--ink); }
+.style-details[open] .guide-toggle { background: var(--soft); }
+h1 { font-size: clamp(2.25rem, 4.5vw, 3.75rem); }
+h2 { font-size: clamp(2rem, 3.2vw, 2.5rem); }
+.project-card h3 { font-size: 1.4375rem; }
+.hero-description { font-size: 1rem; }
+.site-footer > span, .site-footer > a:last-child { font-size: .875rem; }
+.site-footer { flex-wrap: wrap; }
+.site-footer a { min-height: 44px; display: inline-flex; align-items: center; }
+.navbar-toggler, .btn-close { min-height: 44px; min-width: 44px; }
+.accordion-button:disabled { opacity: 1; color: var(--ink); cursor: default; }
+.project-actions { flex-wrap: wrap; }
+@media (max-width: 767px) {
+  .view-list li { grid-template-columns: 26px 1fr; }
+  .view-list li span { grid-column: 2; }
+  .toolbar { align-items: stretch; }
+  .filter-group { gap: 4px; }
+  .filter-button { padding: 10px; }
+  .search-field { min-width: 0; }
+  .search-control { min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}

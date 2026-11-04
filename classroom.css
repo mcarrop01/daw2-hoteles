@@ -1,0 +1,733 @@
+/* Tokens compartidos con la guía de estilo. Bootstrap resuelve sus variantes
+   claras/oscuras con data-bs-theme; aquí se personaliza la paleta del aula. */
+:root,
+[data-bs-theme="light"] {
+  --paper: #f7f5ef;
+  --surface: #ffffff;
+  --ink: #183d36;
+  --muted: #6a716c;
+  --line: #dadfd5;
+  --accent: #bc694d;
+  --soft: #e9ece2;
+  --action: #183d36;
+  --action-text: #ffffff;
+  --action-hover: #2e574b;
+  --disabled-bg: #eaece5;
+  --disabled-text: #646e65;
+  --bs-body-bg: var(--paper);
+  --bs-body-color: var(--ink);
+  --bs-secondary-color: var(--muted);
+  --bs-border-color: var(--line);
+}
+
+[data-bs-theme="dark"] {
+  --paper: #14231f;
+  --surface: #1d302a;
+  --ink: #e5eee5;
+  --muted: #b0bfb4;
+  --line: #40594c;
+  --accent: #e4a184;
+  --soft: #21382e;
+  --action: #cadbc5;
+  --action-text: #14231f;
+  --action-hover: #e0ebdc;
+  --disabled-bg: #30463a;
+  --disabled-text: #b7c6b7;
+}
+
+/* Presentación informativa: jerarquía breve y ancho de lectura limitado. */
+body {
+  line-height: 1.5;
+}
+
+/* Sticky de Bootstrap con fondo opaco y separación para los enlaces internos. */
+html {
+  scroll-padding-top: calc(var(--nav-height, 96px) + 20px);
+}
+
+.site-header {
+  background: var(--paper);
+  box-shadow: 0 3px 12px #0000000a;
+}
+
+.hero {
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+
+h1 {
+  font-size: clamp(36px, 4.5vw, 60px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+h1 em {
+  font-style: normal;
+}
+
+.hero-description {
+  max-width: 665px;
+  font-size: 16px;
+}
+
+.hero .btn span {
+  margin-left: 15px;
+}
+
+.course-card,
+.delivery-card,
+.swatch-card,
+.project-card {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.course-card h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -.4px;
+}
+
+.course-details {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.course-details>div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.course-details dt {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.course-details dd {
+  margin: 0;
+  text-align: right;
+}
+
+.course-strip {
+  background: #183d36;
+}
+
+.course-strip span:nth-child(2) {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.wordmark:hover,
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent);
+}
+
+.brand-icon {
+  background: #183d36;
+  color: #f7f5ef;
+}
+
+/* ScrollSpy añade active; aria-current se sincroniza en JavaScript. */
+.site-header .nav-link {
+  border-radius: 4px;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.site-header .nav-link.active {
+  color: var(--ink);
+  background: var(--soft);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* El switch conserva el funcionamiento nativo de Bootstrap y una etiqueta estable. */
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 0;
+}
+
+.theme-switch .form-check-input {
+  float: none;
+  flex-shrink: 0;
+  margin: 0;
+  cursor: pointer;
+  width: 2.4em;
+  height: 1.3em;
+  border-color: var(--muted);
+}
+
+.theme-switch .form-check-input:checked {
+  background-color: #476653;
+  border-color: #476653;
+}
+
+.theme-switch .form-check-label {
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.theme-icon {
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: color 150ms ease;
+  pointer-events: none;
+}
+
+[data-bs-theme="light"] .theme-sun,
+[data-bs-theme="dark"] .theme-moon {
+  color: var(--accent);
+}
+
+/* Variantes de botones Bootstrap vinculadas a las variables del tema activo. */
+.btn-primary {
+  --bs-btn-bg: var(--action);
+  --bs-btn-color: var(--action-text);
+  --bs-btn-border-color: var(--action);
+  --bs-btn-hover-bg: var(--action-hover);
+  --bs-btn-hover-color: var(--action-text);
+  --bs-btn-hover-border-color: var(--action-hover);
+  --bs-btn-active-bg: var(--action-hover);
+  --bs-btn-active-color: var(--action-text);
+  --bs-btn-active-border-color: var(--action-hover);
+  --bs-btn-disabled-bg: var(--disabled-bg);
+  --bs-btn-disabled-color: var(--disabled-text);
+  --bs-btn-disabled-border-color: var(--disabled-bg);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--ink);
+  --bs-btn-border-color: var(--ink);
+  --bs-btn-hover-bg: var(--action);
+  --bs-btn-hover-color: var(--action-text);
+  --bs-btn-hover-border-color: var(--action);
+}
+
+.filter-button {
+  font-weight: 400;
+  font-size: 12px;
+  --bs-btn-color: var(--muted);
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-hover-bg: var(--soft);
+  --bs-btn-active-bg: var(--action);
+  --bs-btn-active-color: var(--action-text);
+}
+
+.filter-button.active {
+  background: var(--action);
+  color: var(--action-text);
+}
+
+.search-field {
+  background: var(--surface);
+}
+
+.search-field .form-control {
+  box-shadow: none;
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.search-field .form-control::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.toolbar {
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.catalog-controls {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.course-filter .form-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.course-filter .form-select {
+  font-size: 14px;
+  min-width: 180px;
+  border-color: var(--line);
+  color: var(--ink);
+  background-color: var(--surface);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.course-filter .form-select:disabled {
+  color: var(--muted);
+  background-color: var(--soft);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* Se conserva el fondo SVG de Bootstrap: usar background-color evita borrar la flecha. */
+.results-bar .form-select {
+  font-size: 14px;
+  min-width: 190px;
+  padding: 10px 36px 10px 12px;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background-color: var(--surface);
+  cursor: pointer;
+}
+
+.project-actions {
+  border-color: var(--line);
+}
+
+.avatar {
+  background: var(--soft);
+}
+
+.project-cover {
+  color: #183d36;
+}
+
+.status {
+  font-size: 10px;
+}
+
+[data-bs-theme="dark"] .status {
+  background: #39372a;
+  color: #e1cf9f;
+  border-color: #5d583c;
+}
+
+[data-bs-theme="dark"] .status.linked {
+  background: #284931;
+  color: #c4e0ba;
+  border-color: #54794f;
+}
+
+.reference-link,
+.figma-link {
+  font-size: 12px;
+}
+
+.project-actions .btn {
+  font-size: 12px;
+}
+
+/* Mantiene las acciones alineadas en tarjetas de la misma fila. */
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.project-actions {
+  margin-top: auto;
+}
+
+.reference-link {
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.gallery-note {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.site-footer>span,
+.site-footer>a:last-child {
+  font-size: 14px;
+}
+
+.site-footer>a:last-child {
+  padding: 10px 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.assignment-section {
+  background: var(--soft);
+}
+
+.assignment-description,
+.process,
+.accordion-body {
+  color: var(--muted);
+}
+
+/* Fases más legibles; .row y .col de Bootstrap adaptan la lista al ancho disponible. */
+.process {
+  margin-bottom: 0;
+  column-gap: 0;
+  font-size: 14px;
+}
+
+.process-step {
+  border: 1px solid var(--line);
+  padding: 14px 12px;
+}
+
+.process-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.process-number {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.process-step svg {
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.process strong {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 0;
+  line-height: 1.4;
+}
+
+.process-description {
+  display: block;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Checklist de Bootstrap: las marcas pertenecen al navegador, no al alumno. */
+.checklist-badge {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.checklist-note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.checklist-note a {
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+
+.checklist-row {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  padding: 12px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.checklist-row .form-check-input {
+  float: none;
+  margin: 4px 0 0;
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+  border-color: var(--muted);
+}
+
+.checklist-row .form-check-input:checked {
+  background-color: #476653;
+  border-color: #476653;
+}
+
+.checklist-row .form-check-label {
+  flex: 1;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.65;
+  cursor: pointer;
+}
+
+.checklist-row:has(input:checked) .form-check-label {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.checklist-status {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+#checklist-progress {
+  height: 6px;
+  background: var(--line);
+}
+
+#checklist-progress .progress-bar {
+  background: var(--action);
+}
+
+.accordion {
+  --bs-accordion-color: var(--ink);
+  --bs-accordion-border-color: var(--line);
+  --bs-accordion-active-color: var(--ink);
+}
+
+.view-list li {
+  font-size: 12px;
+}
+
+.delivery-section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.delivery-card p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.resources-section {
+  padding-top: 0;
+  padding-bottom: 55px;
+}
+
+.resources-card {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.resources-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+  max-width: 760px;
+}
+
+.resources-card h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.resource-icon {
+  color: var(--accent);
+}
+
+.resource-status {
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--soft);
+  border: 1px solid var(--line);
+}
+
+/* Guía antes del pie: Cards, Table responsive y List group de Bootstrap. */
+.style-section {
+  padding: 55px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.style-subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.swatch-card {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.swatch {
+  height: 70px;
+  border-bottom: 1px solid var(--line);
+}
+
+.swatch-card .card-body {
+  padding: 13px;
+}
+
+.swatch-card h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.swatch-card code {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.copy-color {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 7px;
+  border-color: var(--line);
+  flex-shrink: 0;
+}
+
+.copy-color.copied {
+  color: var(--action-text);
+  background: var(--action);
+  border-color: var(--action);
+}
+
+.swatch-card .card-body {
+  padding: 12px;
+}
+
+.toast {
+  --bs-toast-bg: var(--surface);
+  --bs-toast-color: var(--ink);
+  --bs-toast-border-color: var(--line);
+  font-size: 14px;
+}
+
+.toast-container {
+  max-width: 100%;
+}
+
+.font-specimen {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 29px;
+}
+
+.font-specimen span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 8px;
+}
+
+.style-table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--ink);
+  --bs-table-border-color: var(--line);
+  font-size: 12px;
+}
+
+.style-table th {
+  font-weight: 600;
+}
+
+.style-table> :not(caption)>*>* {
+  padding: 10px 8px;
+}
+
+.style-table caption {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.style-list {
+  --bs-list-group-bg: transparent;
+  --bs-list-group-color: var(--muted);
+  --bs-list-group-border-color: var(--line);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.style-list .list-group-item {
+  padding: 14px 0;
+}
+
+.style-list strong {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .site-header .nav-link,
+  .theme-icon {
+    transition: none;
+  }
+}
+
+/* Se repliega en xl para acomodar el nuevo enlace sin amontonar la navegación. */
+@media (max-width: 1199px) {
+  .navbar-collapse {
+    padding: 16px 0;
+  }
+
+  .navbar {
+    max-height: 100dvh;
+    overflow-y: auto;
+  }
+
+  .theme-switch {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 8vw, 44px);
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .delivery-section,
+  .style-section {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .resources-section {
+    padding-bottom: 35px;
+  }
+
+  .resources-section .section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .catalog-controls {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .catalog-controls .search-field {
+    margin-top: 0;
+    min-width: 0;
+  }
+
+  .results-bar {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}
