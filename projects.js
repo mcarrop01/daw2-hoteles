@@ -2,7 +2,7 @@
 // Añade las URL públicas de cada entrega en web y figma. Vacío = enlace pendiente.
 // Las direcciones deben comenzar por https:// o http://.
 window.PROJECTS = [
-  { course: '2026-2027', student: 'Miguel',   hotel: 'Logroño Hotel',         reference: 'https://www.hotellogrono.com/', web: 'https://github.com/mcarrop01/daw2-hoteles.git', figma: '' },
+  { course: '2026-2027', student: 'Miguel',   hotel: 'Logroño Hotel',         reference: 'https://www.hotellogrono.com/', web: 'https://daw032026-code.github.io/hoterIraipe/', figma: '' },
   { course: '2026-2027', student: 'Mario',    hotel: 'Novotel Madrid Center', reference: 'https://www.novotelmadridcenter.com/', web: 'https://mk-1379.github.io/novotel-madrid/', figma: '' },
   { course: '2026-2027', student: 'Fernando', hotel: 'Musik Boutique Hotel',  reference: 'https://www.musikboutiquehotel.com/es/', web: '', figma: '' },
   { course: '2026-2027', student: 'Juan',     hotel: 'Hotel Murrieta',        reference: 'https://www.hotelmurrieta.com/', web: '', figma: '' },
