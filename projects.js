@@ -9,7 +9,7 @@ window.PROJECTS = [
   { course: '2026-2027', student: 'Oscar',    hotel: 'El Molino de Floren',   reference: 'https://www.elmolinodefloren.com/es', web: 'http://daw132026.github.io/molinodefloren', figma: '' },
   { course: '2026-2027', student: 'Hector',   hotel: 'Áurea Palacio de Correos', reference: 'https://www.eurostarshotels.com/aurea-palacio-de-correos.html', web: 'https://daw142026-hue.github.io/aurea-hotel/', figma: '' },
   { course: '2026-2027', student: 'Angela',   hotel: 'Hostal Puente de Hierro', reference: 'https://hostalpuentedehierro.holiwopp.com/', web: 'https://daw11jesuitas2026-droid.github.io/hostalpuentedehierro', figma: '' },
-  { course: '2026-2027', student: 'DiegoJ',   hotel: 'H10 Salou Princess',    reference: 'https://www.h10hotels.com/es/hoteles-salou/h10-salou-princess', web: 'https://daw162026.github.io/dise-o-bootstrap-y-figma', figma: '' },
+  { course: '2026-2027', student: 'DiegoJ',   hotel: 'H10 Salou Princess',    reference: 'https://www.h10hotels.com/es/hoteles-salou/h10-salou-princess', web: 'https://daw162026.github.io/Dise-o-Bootstrap-y-Figma/', figma: '' },
   { course: '2026-2027', student: 'Alex',     hotel: 'FG Logroño',            reference: 'https://www.fglogrono-hotel.com/es/', web: 'https://alexandrupincoschi.github.io/hotel-fg', figma: '' },
   { course: '2026-2027', student: 'Cesar',    hotel: 'El Ciego Hotel',          reference: 'https://www.elciegohotel.com/', web: 'https://daw052026.github.io/villadelciego', figma: '' },
   { course: '2026-2027', student: 'Ramiro',   hotel: 'Magic Cristal Park',    reference: 'https://www.hotelmagiccristalpark.com/', web: 'https://ramirorea.github.io/hotelmagic', figma: '' },
