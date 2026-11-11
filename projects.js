@@ -13,7 +13,7 @@ window.PROJECTS = [
   { course: '2026-2027', student: 'Alex',     hotel: 'FG Logroño',            reference: 'https://www.fglogrono-hotel.com/es/', web: 'https://alexandrupincoschi.github.io/Hotel-FG/', figma: '' },
   { course: '2026-2027', student: 'Cesar',    hotel: 'El Ciego Hotel',          reference: 'https://www.elciegohotel.com/', web: 'https://daw052026.github.io/villadelciego', figma: '' },
   { course: '2026-2027', student: 'Ramiro',   hotel: 'Magic Cristal Park',    reference: 'https://www.hotelmagiccristalpark.com/', web: 'https://ramirorea.github.io/hotelmagic', figma: '' },
-  { course: '2026-2027', student: 'Cristina', hotel: 'Hotel Leyre',             reference: 'https://www.hotel-leyre.com/', web: 'https://dam07.2025.github.io/hotelleyre', figma: '' },
+  { course: '2026-2027', student: 'Cristina', hotel: 'Hotel Leyre',             reference: 'https://www.hotel-leyre.com/', web: 'https://Cris6096.github.io/HotelLeyre', figma: '' },
   { course: '2026-2027', student: 'DiegoH',   hotel: 'Hotel Zenit Logroño',     reference: 'https://logrono.zenithoteles.com/es/', web: 'https://daw06.github.io/HotelZenit/', figma: '' },
   { course: '2026-2027', student: 'Anthony',  hotel: 'Hotel Ciudad de Logroño', reference: 'https://www.ciudadlogrono.com/', web: 'https://anthonymosquera2026.github.io/hotelciudaddelogrono', figma: '' }
 ];
